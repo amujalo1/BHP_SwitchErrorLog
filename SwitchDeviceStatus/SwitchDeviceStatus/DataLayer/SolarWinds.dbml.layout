@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="SolarWinds">
+  <DataContextMoniker Name="/SolarWindsDataContext" />
+  <nestedChildShapes>
+    <classShape Id="bc07b999-1eff-4137-adce-895748c003db" absoluteBounds="3.875, 0.625, 2.875, 5.4246240234375">
+      <DataClassMoniker Name="/SolarWindsDataContext/SysLog" />
+      <nestedChildShapes>
+        <elementListCompartment Id="11bf3239-0b36-4c8d-8ab4-a2f6077d9944" absoluteBounds="3.8899999999999997, 1.085, 2.8449999999999998, 4.8646240234375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b15aa15f-7b37-40f7-8c59-5644495111cb" absoluteBounds="0.625, 0.625, 2, 1.9631982421875">
+      <DataClassMoniker Name="/SolarWindsDataContext/ErrorCount" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c68391c0-fb91-439e-8161-2aabf7fd7e88" absoluteBounds="0.63999999999999968, 1.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

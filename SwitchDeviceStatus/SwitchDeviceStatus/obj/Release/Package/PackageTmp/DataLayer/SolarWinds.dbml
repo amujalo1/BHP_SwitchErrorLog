@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SolarWindsOrion" Class="SolarWindsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.SysLog" Member="SysLogs">
+    <Type Name="SysLog">
+      <Column Name="MsgID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EngineID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IP" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Acknowledged" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="SysLogFacility" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="SysLogSeverity" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Hostname_ANSI" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Hostname_UNICODE" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NodeID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="MessageType_ANSI" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="MessageType_UNICODE" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Message_ANSI" Type="System.String" DbType="VarChar(1024) NOT NULL" CanBeNull="false" />
+      <Column Name="Message_UNICODE" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+      <Column Name="SysLogTag_ANSI" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SysLogTag_UNICODE" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="FirstIPInMessage" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SecIPInMessage" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MacInMessage" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="TimeStamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="Hostname" Type="System.String" DbType="NVarChar(255) NOT NULL" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Message" Type="System.String" DbType="NVarChar(1024) NOT NULL" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MessageType" Type="System.String" DbType="NVarChar(100) NOT NULL" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SysLogTag" Type="System.String" DbType="NVarChar(100) NOT NULL" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ErrorCounts" Member="ErrorCounts">
+    <Type Name="ErrorCount">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Interface" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="NumberOfErrors" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Hostname" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="IP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Datum" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.InsertErrorCountsTemp" Method="InsertErrorCountsTemp">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetAllErrorCounts" Method="GetAllErrorCounts" IsComposable="true">
+    <Parameter Name="datumOd" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="datumDo" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="GetAllErrorCountsResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Interface" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="NumberOfErrors" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Hostname" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="IP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Datum" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetErrorCountsGrouped" Method="GetErrorCountsGrouped" IsComposable="true">
+    <Parameter Name="datumOd" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="datumDo" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="GetErrorCountsGroupedResult">
+      <Column Name="Interface" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="NumberOfErrors" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Hostname" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="IP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Datum" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>
