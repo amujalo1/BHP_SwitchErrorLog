@@ -56,7 +56,7 @@ Cilj ovog projekta je osigurati pouzdano i efikasno rješenje za detekciju mrež
 ## ✍️ Autor
 **Amer Mujalo**  
 Student Fakulteta elektrotehnike, Sarajevo  
-GitHub profil: [Vaš GitHub Username](https://github.com/amujalo1)  
+GitHub profil: [amujalo1](https://github.com/amujalo1)  
 
 📧 Kontakt: **amujalo1@etf.unsa.ba**
 
